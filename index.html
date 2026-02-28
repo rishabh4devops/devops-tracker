@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>30-Day AWS DevOps Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginScreen" class="login">
+  <h2>🔐 Secure Login</h2>
+  <input type="password" id="pinInput" placeholder="Enter 4-digit PIN">
+  <button onclick="login()">Login</button>
+</div>
+
+<!-- APP -->
+<div id="app" class="app hidden">
+
+<header>
+  <div class="profile">
+    <img id="profilePic">
+    <div>
+      <h2 id="userName"></h2>
+      <div class="streak">🔥 Streak: <span id="streakCount">0</span> days</div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <button class="tab active" onclick="showTab('tracker')">📋 Tracker</button>
+  <button class="tab" onclick="showTab('charts')">📊 Progress</button>
+</nav>
+
+<section id="tracker" class="tab-content active">
+  <div id="days"></div>
+</section>
+
+<section id="charts" class="tab-content">
+  <canvas id="weeklyChart"></canvas>
+
+  <h3>🏆 Badges</h3>
+  <div id="badges" class="badges"></div>
+
+  <h3>🗓️ Activity Heatmap</h3>
+  <div id="heatmap" class="heatmap"></div>
+</section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
