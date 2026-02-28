@@ -2,50 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>30-Day AWS DevOps Tracker</title>
+
+  <!-- App-like behavior -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="DevOps Tracker">
+
+  <!-- App icon -->
+  <link rel="apple-touch-icon" href="app-icon.png">
+
+  <title>DevOps Tracker</title>
+
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-<!-- LOGIN -->
-<div id="loginScreen" class="login">
-  <h2>🔐 Secure Login</h2>
-  <input type="password" id="pinInput" placeholder="Enter 4-digit PIN">
-  <button onclick="login()">Login</button>
-</div>
+<div id="app" class="app">
 
-<!-- APP -->
-<div id="app" class="app hidden">
-
-<header>
-  <div class="profile">
-    <img id="profilePic">
-    <div>
-      <h2 id="userName"></h2>
-      <div class="streak">🔥 Streak: <span id="streakCount">0</span> days</div>
+  <header>
+    <div class="profile">
+      <img id="profilePic">
+      <div>
+        <h2 id="userName"></h2>
+        <div class="streak">🔥 Streak: <span id="streakCount">0</span> days</div>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<nav>
-  <button class="tab active" onclick="showTab('tracker')">📋 Tracker</button>
-  <button class="tab" onclick="showTab('charts')">📊 Progress</button>
-</nav>
+  <nav>
+    <button class="tab active" onclick="showTab('tracker')">📋 Tracker</button>
+    <button class="tab" onclick="showTab('charts')">📊 Progress</button>
+  </nav>
 
-<section id="tracker" class="tab-content active">
-  <div id="days"></div>
-</section>
+  <section id="tracker" class="tab-content active">
+    <div id="days"></div>
+  </section>
 
-<section id="charts" class="tab-content">
-  <canvas id="weeklyChart"></canvas>
+  <section id="charts" class="tab-content">
+    <canvas id="weeklyChart"></canvas>
 
-  <h3>🏆 Badges</h3>
-  <div id="badges" class="badges"></div>
+    <h3>🏆 Badges</h3>
+    <div id="badges" class="badges"></div>
 
-  <h3>🗓️ Activity Heatmap</h3>
-  <div id="heatmap" class="heatmap"></div>
-</section>
+    <h3>🗓️ Activity Heatmap</h3>
+    <div id="heatmap" class="heatmap"></div>
+  </section>
 
 </div>
 
